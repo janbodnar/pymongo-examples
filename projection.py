@@ -8,5 +8,7 @@ with client:
     
     db = client.testdb
 
-    # projections return specific values 
-    # from an array of values
+    cars = db.cars.find({}, {'_id': 1, 'name':1})
+
+    for car in cars:
+        print(car)
